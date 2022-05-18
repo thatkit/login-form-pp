@@ -43,6 +43,14 @@ export const IconBtnContainer = styled.div`
 	gap: 8px;
 `;
 
+export const Footer = styled.footer`
+	width: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	gap: 12px;
+`;
+
 export const Span = styled.span`
 	font-style: normal;
 	font-weight: 400;
@@ -52,10 +60,7 @@ export const Span = styled.span`
 	color: ${colours.fontDark};
 `;
 
-export const Footer = styled.footer`
-	width: 100%;
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: center;
-	gap: 16px;
+export const BottomSpan = styled.p`
+	height: 100%;
+	line-height: 21px;
 `;

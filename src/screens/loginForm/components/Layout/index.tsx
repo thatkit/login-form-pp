@@ -7,6 +7,7 @@ import {
 	Footer,
 	Header,
 	H4,
+	BottomSpan,
 } from "./styles";
 import googleIcon from "../../../../assets/icons/google-icon.svg";
 import facebookIcon from "../../../../assets/icons/facebook-icon.svg";
@@ -29,7 +30,7 @@ export const Layout = () => {
 			</IconBtnContainer>
 			<Footer>
 				<Span>No account?</Span>
-				<Link>Create one</Link>
+				<Link><BottomSpan>Create one</BottomSpan></Link>
 			</Footer>
 		</Container>
 	);
