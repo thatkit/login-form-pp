@@ -1,7 +1,12 @@
 import React from "react";
 import { Header } from "../Header";
 import { Heading } from "../Heading";
-import { FormContainer } from "./styles";
+import { IconBtn } from "../IconBtn";
+import { FormContainer, IconBtnContainer, Span, Footer } from "./styles";
+import googleIcon from "../../../../assets/icons/google-icon.svg";
+import facebookIcon from "../../../../assets/icons/facebook-icon.svg";
+import githubIcon from "../../../../assets/icons/github-icon.svg";
+import { ActionBtn, Input, Link } from "../../../../styles/universalComponents";
 
 export const FormCnt = () => {
 	return (
@@ -9,23 +14,31 @@ export const FormCnt = () => {
 			<Header>
 				<Heading />
 			</Header>
-			<div>
-				<input type="text" name="email" id="email" />
-				<label htmlFor="email">E-mail</label>
-				<input type="text" name="password" id="password" />
-				<label htmlFor="password">Password</label>
-				<a href="">Reset password</a>
-				<button>Log in</button>
-			</div>
-			<div>
-				<button>Log in with Google</button>
-				<button>Log in with Facebook</button>
-				<button>Log in with GitHub</button>
-			</div>
-			<footer>
-				<span>No account?</span>
-				<a href="">Create one</a>
-			</footer>
+			<form>
+				<Input
+					type="text"
+					name="email"
+					id="email"
+					placeholder="Password"
+				/>
+				<Input
+					type="text"
+					name="password"
+					id="password"
+					placeholder="E-mail"
+				/>
+				<Link href="">Reset password</Link>
+				<ActionBtn type="submit">Log in</ActionBtn>
+			</form>
+			<IconBtnContainer>
+				<IconBtn icon={googleIcon}>Log in with Google</IconBtn>
+				<IconBtn icon={facebookIcon}>Log in with Facebook</IconBtn>
+				<IconBtn icon={githubIcon}>Log in with GitHub</IconBtn>
+			</IconBtnContainer>
+			<Footer>
+				<Span>No account?</Span>
+				<Link href="">Create one</Link>
+			</Footer>
 		</FormContainer>
 	);
 };

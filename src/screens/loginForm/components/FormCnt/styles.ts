@@ -10,3 +10,27 @@ export const FormContainer = styled.div`
 		0px 6px 12px rgba(0, 0, 0, 0.12), 0px 1px 16px rgba(0, 0, 0, 0.12);
 	border-radius: 8px;
 `;
+
+export const IconBtnContainer = styled.div`
+	margin-bottom: 32px;
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 8px;
+`;
+
+export const Span = styled.span`
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0.25px;
+	color: ${colours.fontDark};
+`;
+
+export const Footer = styled.footer`
+	width: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	gap: 16px;
+`;
