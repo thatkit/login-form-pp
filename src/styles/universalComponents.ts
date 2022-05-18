@@ -1,7 +1,9 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { colours, widths } from "./variables";
 
-export const Link = styled.a`
+export const Link = styled.button`
+	border: none;
+	background: none;
 	font-style: normal;
 	font-weight: 700;
 	font-size: 14px;
@@ -10,6 +12,14 @@ export const Link = styled.a`
 	color: ${colours.linkEnabled};
 	text-decoration: none;
 	cursor: pointer;
+
+	${(props) =>
+		props.disabled &&
+		css`
+			color: ${colours.linkDisabled};
+			pointer-events: none;
+			font-weight: 400;
+		`}
 `;
 
 export const ActionBtn = styled.button`
@@ -17,12 +27,22 @@ export const ActionBtn = styled.button`
 	height: 43px;
 	border: none;
 	border-radius: 8px;
-	background: ${colours.btnDisabled};
+	background: ${colours.btnEnabled};
 	font-style: normal;
-	font-weight: 400;
+	font-weight: 700;
 	font-size: 16px;
 	line-height: 19px;
 	color: ${colours.frontBg};
+	cursor: pointer;
+
+	${(props) =>
+		props.disabled &&
+		css`
+			background: ${colours.btnDisabled};
+			color: ${colours.frontBg};
+			pointer-events: none;
+			font-weight: 400;
+		`}
 `;
 
 export const Input = styled.input`

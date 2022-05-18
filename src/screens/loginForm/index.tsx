@@ -1,11 +1,11 @@
 import React from "react";
-import { FormCnt } from "./components/FormCnt";
-import { LoginFormScreen } from "./styles";
+import { Layout } from "./components/Layout";
+import { LoginFormView } from "./styles";
 
-export const LoginForm = () => {
+export const LoginFormScreen = () => {
 	return (
-		<LoginFormScreen>
-			<FormCnt />
-		</LoginFormScreen>
+		<LoginFormView>
+			<Layout />
+		</LoginFormView>
 	);
 };
