@@ -1,3 +1,3 @@
 export const colours = {
-	background: "#ffffff",
+	frontBg: "#FFFFFF", // #
 };
