@@ -3,8 +3,12 @@ import { ActionBtn, Input, Link } from "../../../../styles/universalComponents";
 import { ActionGroup, InputGroup, Span } from "./styles";
 import isEmail from "validator/es/lib/isEmail";
 import isStrongPassword from "validator/es/lib/isStrongPassword";
+import { observer } from "mobx-react-lite";
+import { useFormState } from "../../store";
 
-export const FormComponent = () => {
+export const FormComponent = observer((): JSX.Element => {
+	const [state] = useState(useFormState());
+
 	const [isDisabled, setIsDisabled] = useState(true);
 	const [isValidEmail, setIsValidEmail] = useState<boolean | undefined>(
 		undefined
@@ -21,7 +25,12 @@ export const FormComponent = () => {
 	}, [isValidEmail, isStrongPass]);
 
 	return (
-		<form>
+		<form
+			onSubmit={(e) => {
+				e.preventDefault();
+				state.login();
+			}}
+		>
 			<InputGroup>
 				<Input
 					type="email"
@@ -29,11 +38,12 @@ export const FormComponent = () => {
 					id="email"
 					placeholder="E-mail"
 					autoComplete="email"
-					onChange={(e) =>
+					onChange={(e) => {
 						setIsValidEmail(
 							isEmail((e.target as HTMLInputElement).value)
-						)
-					}
+						);
+						state.email = e.target.value;
+					}}
 					alt={`${isValidEmail}`}
 				/>
 				<Input
@@ -42,7 +52,7 @@ export const FormComponent = () => {
 					id="password"
 					placeholder="Password"
 					autoComplete="current-password"
-					onChange={(e) =>
+					onChange={(e) => {
 						setIsStrongPass(
 							isStrongPassword(
 								(e.target as HTMLInputElement).value,
@@ -50,8 +60,9 @@ export const FormComponent = () => {
 									minSymbols: 0,
 								}
 							)
-						)
-					}
+						);
+						state.pass = e.target.value;
+					}}
 					alt={`${isStrongPass}`}
 				/>
 			</InputGroup>
@@ -65,4 +76,4 @@ export const FormComponent = () => {
 			</ActionGroup>
 		</form>
 	);
-};
+});
