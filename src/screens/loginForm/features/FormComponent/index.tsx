@@ -7,16 +7,18 @@ export const FormComponent = () => {
 		<form>
 			<InputGroup>
 				<Input
-					type="text"
+					type="email"
 					name="email"
 					id="email"
 					placeholder="E-mail"
+					autoComplete="email"
 				/>
 				<Input
-					type="text"
+					type="password"
 					name="password"
 					id="password"
 					placeholder="Password"
+					autoComplete="current-password"
 				/>
 			</InputGroup>
 			<ActionGroup>
