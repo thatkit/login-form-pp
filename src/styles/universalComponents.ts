@@ -77,4 +77,14 @@ export const Input = styled.input`
 		letter-spacing: 0.44px;
 		color: ${colours.fontLigth};
 	}
+
+	${(props) =>
+		props.alt === "false" &&
+		css`
+			border-bottom-color: ${colours.invalid};
+
+			&:focus {
+				border-bottom-color: ${colours.invalid};
+			}
+		`}
 `;

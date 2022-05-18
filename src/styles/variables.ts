@@ -13,6 +13,8 @@ export const colours = {
 	// inputs
 	inputFocused: "#2980B9",
 	inputUnfocused: "#1b1b1b61",
+	// invalidity
+	invalid: "#F54E1C"
 };
 
 export const widths = {
