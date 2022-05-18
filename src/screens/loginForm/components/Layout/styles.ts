@@ -24,7 +24,7 @@ export const H4 = styled.button`
 	font-style: normal;
 	font-weight: 400;
 	font-size: 34px;
-	line-height: 40px;
+	line-height: 39.84px;
 	letter-spacing: 0.25px;
 	color: ${colours.fontDark};
 	cursor: pointer;

@@ -3,6 +3,10 @@ import { colours, widths } from "./variables";
 
 export const Link = styled.button`
 	border: none;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
 	background: none;
 	font-style: normal;
 	font-weight: 700;
