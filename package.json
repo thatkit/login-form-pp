@@ -10,6 +10,7 @@
     "@types/node": "^16.11.36",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
+    "eslint-import-resolver-typescript": "^2.7.1",
     "mobx": "^6.5.0",
     "mobx-react-lite": "^3.4.0",
     "react": "^18.1.0",
@@ -24,7 +25,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "npx eslint .",
+    "prettify": "prettier --write ."
   },
   "eslintConfig": {
     "extends": [
@@ -46,6 +49,17 @@
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.25",
-    "@types/validator": "^13.7.2"
+    "@types/validator": "^13.7.2",
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
+    "eslint": "^8.15.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-import-resolver-webpack": "^0.13.2",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-meteor": "^7.3.0",
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "prettier": "2.6.2"
   }
 }

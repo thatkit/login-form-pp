@@ -1,11 +1,11 @@
-import React from "react";
-import { Layout } from "./components/Layout";
-import { LoginFormView } from "./styles";
+import React from 'react';
+import { Layout } from './components/Layout';
+import { LoginFormView } from './styles';
 
 export const LoginFormScreen = () => {
-	return (
-		<LoginFormView>
-			<Layout />
-		</LoginFormView>
-	);
+  return (
+    <LoginFormView>
+      <Layout />
+    </LoginFormView>
+  );
 };

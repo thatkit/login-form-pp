@@ -1,0 +1,90 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "project": "./tsconfig.json"
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "meteor": true
+  },
+  "plugins": [
+    "meteor",
+    "react",
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "airbnb/base",
+    "eslint:recommended",
+    "plugin:meteor/recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "globals": {
+    "Links": "writable"
+  },
+  "settings": {
+    "import/resolver": {
+      "meteor": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    },
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "indent": "off",
+    "@typescript-eslint/indent": ["error", 2],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
+    "import/prefer-default-export": "off",
+    "import/no-absolute-path": [
+      "off"
+    ],
+    "import/extensions": [
+      "off",
+      "never"
+    ],
+    "import/no-extraneous-dependencies": [
+      "off"
+    ],
+    "no-underscore-dangle": [
+      "off"
+    ],
+    "comma-style": [2, "last"],
+    "linebreak-style": ["off"],
+    "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 0 }],
+    "consistent-return": ["off"],
+    "prefer-destructuring": "off",
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "operator-linebreak": [
+      "error",
+      "after",
+      {
+        "overrides": {
+          ":": "before"
+        }
+      }
+    ],
+    "implicit-arrow-linebreak": "off",
+    "function-paren-newline": "off",
+    "comma-dangle": ["error", {
+      "arrays": "always-multiline",
+      "objects": "always-multiline",
+      "imports": "always-multiline",
+      "exports": "always-multiline"
+    }],
+    "arrow-body-style": "off",
+    "object-curly-newline": "off",
+    "no-continue": "off",
+    "no-restricted-syntax": "off"
+  }
+}

@@ -1,44 +1,41 @@
-import { makeAutoObservable } from "mobx";
-import { createContext, useContext } from "react";
-import { apiClient } from "../../api";
+import { makeAutoObservable } from 'mobx';
+import { createContext, useContext } from 'react';
+import { ApiClient } from '../../api';
 
 class FormState {
-	_inputs = {
-		email: "",
-		pass: "",
-	};
+  _inputs = {
+    email: '',
+    pass: '',
+  };
 
-	client = new apiClient();
+  client = new ApiClient();
 
-	constructor() {
-		makeAutoObservable(this);
-	}
+  constructor() {
+    makeAutoObservable(this);
+  }
 
-	get email() {
-		return this._inputs.email;
-	}
+  set email(email: string) {
+    this._inputs.email = email;
+  }
 
-	get pass() {
-		return this._inputs.pass;
-	}
+  set pass(pass: string) {
+    this._inputs = {
+      ...this._inputs,
+      pass,
+    };
+  }
 
-	set email(email: string) {
-		this._inputs = {
-			...this._inputs,
-			email,
-		};
-	}
+  get email() {
+    return this._inputs.email;
+  }
 
-	set pass(pass: string) {
-		this._inputs = {
-			...this._inputs,
-			pass,
-		};
-	}
+  get pass() {
+    return this._inputs.pass;
+  }
 
-	login() {
-		this.client.FETCH_USER_WITH_CREDENTIALS(this.email, this.pass);
-	}
+  login() {
+    this.client.FETCH_USER_WITH_CREDENTIALS(this.email, this.pass);
+  }
 }
 
 export const FormStateContext = createContext(new FormState());
